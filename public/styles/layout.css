@@ -17,9 +17,10 @@ html {
  main {
    width: 90%;
    background-color: #f4f1ec;
-   text-align: center;
-   
+   margin: 0 auto;
+   align-items: center;
  }
+
 
 body {
   color: #545149;

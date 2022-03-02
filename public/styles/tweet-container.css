@@ -1,0 +1,66 @@
+ /* Probably a better way to do this -->make a class in header in main*/
+ .tweet-container {
+   border-style: solid;
+   border-width: 2.5px;
+   padding: 10px;
+ }
+
+ .tweet-container:hover {
+  box-shadow: 5px 5px gray;
+ }
+ 
+ article.tweet header {
+  background-color: #f4f1ec;
+  background-image: none;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color:darkgray;
+ }
+
+ article.tweet p {
+   min-height: 50px;
+   border-color: black;
+   border-bottom: 0.2rem solid;
+   display: flex;
+   align-items: center;
+   font-family: sans-serif;
+   padding-bottom: 30px;
+ }
+
+ article.tweet footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: grey;
+ }
+
+ article.tweet footer div {
+   display: flex;
+   align-items: center;
+ }
+
+ .user-profilepic {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+ }
+
+ .tweet-date {
+   font-size: medium;
+ }
+
+ .icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color:cornflowerblue;
+  gap:10px;
+ }
+
+ .icons div:hover {
+   color: yellow;
+ }

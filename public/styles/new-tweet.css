@@ -20,6 +20,10 @@ textarea {
   flex-direction: column;
 }
 
+.past-limit {
+  color: red;
+}
+
 #tweet-but-counter {
   font-family: 'Bungee', cursive;
   display: flex;

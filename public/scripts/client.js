@@ -118,8 +118,13 @@ $(document).ready(function() {
     const serializedData = $(this).serialize();
     const tweetLength = $("#tweet-text").val().length
 
-    if (tweetLength > 140 || $("#tweet-text").val() === "") {
-      alert("Error!");
+    if (tweetLength > 140) {
+      alert("Error! Your tweet is too long!");
+      return false;
+    }
+
+    if ($("#tweet-text").val() === "") {
+      alert("Error! Your tweet is empty!");
       return false;
     }
 

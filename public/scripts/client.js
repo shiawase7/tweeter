@@ -95,15 +95,25 @@ const createTweetElement = function(data) {
   `
 }
 
+// const loadTweets = function() {
+//   $.ajax({
+//     url: "/tweets",
+//     method: "GET",
+//     dataType: "json",
+//     success: function (data) {
+//       console.log("Tweets data:",data)
+//       renderTweets(data)
+//     }
+//   })
+// };
+
 const loadTweets = function() {
   $.ajax({
     url: "/tweets",
     method: "GET",
-    dataType: "json",
-    success: function (data) {
-      console.log("Tweets data:",data)
-      renderTweets(data)
-    }
+    dataType: "json"
+  }).then((result) => {
+    renderTweets(result);
   })
 };
 
@@ -133,6 +143,8 @@ $(document).ready(function() {
       type: 'POST',
       url: $("form").attr("action"),
       data: serializedData
+    }).then( (event) => {
+      location.reload();
     })
    
 

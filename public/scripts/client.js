@@ -95,22 +95,44 @@ const createTweetElement = function(data) {
   `
 }
 
+const loadTweets = function() {
+  $.ajax({
+    url: "/tweets",
+    method: "GET",
+    dataType: "json",
+    success: function (data) {
+      console.log("Tweets data:",data)
+      renderTweets(data)
+    }
+  })
+};
+
 $(document).ready(function() {
   // const $tweet = createTweetElement(tweetData);
   // $('#tweet-container').append($tweet);
-  renderTweets(data);
+  // renderTweets(data);
+  loadTweets();
 
   $('#compose-tweet').submit(function(event) {
+    event.preventDefault();
+    const serializedData = $(this).serialize();
+    const tweetLength = $("#tweet-text").val().length
+
+    if (tweetLength > 140 || $("#tweet-text").val() === "") {
+      alert("Error!");
+      return false;
+    }
+
 
     $.ajax({ 
       type: 'POST',
       url: $("form").attr("action"),
-      data: $(this).serialize()
+      data: serializedData
     })
    
 
     console.log( $( this ).serialize() );
-    event.preventDefault();
+    // event.preventDefault();
 
   })
 

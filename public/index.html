@@ -62,7 +62,7 @@
 
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form action="/tweets/" method="post">
+        <form action="/tweets" method="post">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div id="tweet-but-counter">
@@ -72,33 +72,7 @@
         </form>
       </section>
 
-      <section class="tweet-container">
-        <article class="tweet">
-          <header class="tweet-header">
-            <div class="user-profile">
-              <div class="user-profile-pic">
-              </div>
-              <div class="user-name">
-                Newton
-              </div>
-            </div>
-            <div class="handle">@SirIsaac</div>
-          </header>
-
-          <p class="tweet-content">
-            If I have seen further it is standing on the shoulder of giants
-          </p>
-
-          <footer>
-           <div><span class="tweet-date">10 days ago</span></div>
-           <div class="icons"> 
-             <div><i class="fa-solid fa-flag"></i></div>
-             <div><i class="fa-solid fa-retweet"></i></div>
-             <div><i class="fa-solid fa-heart"></i></div>
-           </div>
-          </footer>
-        </article>
-
+      <section id="tweet-container"> 
       </section>
 
     </main>

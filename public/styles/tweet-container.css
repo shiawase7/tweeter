@@ -1,5 +1,5 @@
  /* Probably a better way to do this -->make a class in header in main*/
- .tweet-container {
+ #tweet-container {
    border-style: solid;
    border-width: 2.5px;
    padding: 10px;
@@ -16,6 +16,7 @@
   flex-direction: row;
   justify-content: space-between;
   color:darkgray;
+  padding-top: 20px;
  }
 
  article.tweet p {

@@ -101,6 +101,15 @@ $(document).ready(function() {
   renderTweets(data);
 
   $('#compose-tweet').submit(function(event) {
+
+    $.ajax({ 
+      type: 'POST',
+      url: $("form").attr("action"),
+      data: $(this).serialize()
+    })
+   
+
+    console.log( $( this ).serialize() );
     event.preventDefault();
 
   })

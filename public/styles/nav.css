@@ -7,8 +7,11 @@ nav {
   padding-left: 1.5em;
   padding-right: 1.5em;
   justify-content: space-between;
-  z-index: -1;
-  position: relative;
+  align-items: center;
+   /* z-index: -1;   */
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 #write-new-tweet {

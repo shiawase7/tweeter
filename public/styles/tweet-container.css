@@ -9,9 +9,8 @@
   box-shadow: 5px 5px gray;
  }
  
- article.tweet header {
+ .tweet-header {
   background-color: #f4f1ec;
-  background-image: none;
   height: auto;
   display: flex;
   flex-direction: row;

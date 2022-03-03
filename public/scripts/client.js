@@ -138,14 +138,20 @@ $(document).ready(function() {
     const tweetLength = $("#tweet-text").val().length
 
     if (tweetLength > 140) {
-      alert("Error! Your tweet is too long!");
+      $("#error").text("Error! Your tweet is too long!")
+      $("#error").slideDown("slow")
+      
       return false;
     }
 
     if ($("#tweet-text").val() === "") {
-      alert("Error! Your tweet is empty!");
+      $("#error").text("Error! Your tweet is empty!");
+      $("#error").slideDown("slow");
+     
       return false;
     }
+
+    $("#error").slideUp("slow");
 
 
     $.ajax({ 

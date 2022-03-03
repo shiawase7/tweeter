@@ -43,6 +43,13 @@ const data = [
   }
 ]
 
+//function to escape some text then use it
+const escapes = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 // loops through tweets
 // calls createTweetElement for each tweet
 // takes return value and appends it to the tweets container
@@ -80,7 +87,7 @@ const createTweetElement = function(data) {
           </header>
 
           <p class="tweet-content">
-          ${tweetContent}
+          ${escapes(tweetContent)}
           </p>
 
           <footer>
@@ -116,6 +123,8 @@ const loadTweets = function() {
     renderTweets(result);
   })
 };
+
+
 
 $(document).ready(function() {
   // const $tweet = createTweetElement(tweetData);

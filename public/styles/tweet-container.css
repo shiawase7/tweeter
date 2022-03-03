@@ -42,7 +42,7 @@
    align-items: center;
  }
 
- .user-profilepic {
+ .user-profile {
   display: flex;
   flex-direction: row;
   align-items: center;

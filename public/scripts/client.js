@@ -31,7 +31,7 @@ const createTweetElement = function(data) {
   $userProfilePic.append(img);
   $handle.text(data.user.handle);
   $tweetcontent.text(data.content);
-  $tweetdate.text(data.created_at);
+  $tweetdate.text(timeago.format(data.created_at));
 }
 
 $(document).ready(function() {

@@ -43,14 +43,14 @@ const data = [
   }
 ]
 
+// loops through tweets
+// calls createTweetElement for each tweet
+// takes return value and appends it to the tweets container
 const renderTweets = function(tweets) {
   $('#tweet-container').empty();
   for (const tweet of tweets) {
     $('#tweet-container').prepend(createTweetElement(tweet));
   }
-  // loops through tweets
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
 }
 
 const createTweetElement = function(data) {
@@ -61,7 +61,7 @@ const createTweetElement = function(data) {
   img.src = data.user.avatars;
   const handle = data.user.handle;
   const tweetContent = data.content.text;
-  const tweetDate = data.created_at;
+  const tweetDate = timeago.format(data.created_at);
 
   return `
   <article class="tweet">
@@ -93,16 +93,19 @@ const createTweetElement = function(data) {
           </footer>
   </article>
   `
-
-
-
-  
 }
 
 $(document).ready(function() {
   // const $tweet = createTweetElement(tweetData);
   // $('#tweet-container').append($tweet);
   renderTweets(data);
+
+  $('#compose-tweet').submit(function(event) {
+    event.preventDefault();
+
+  })
+
+
 });
 
 

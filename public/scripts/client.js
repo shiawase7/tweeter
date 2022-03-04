@@ -4,47 +4,8 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
-// Test / driver code (temporary). Eventually will get this from the server.
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-  "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-  "created_at": 1461116232227
-}
-
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
-
-//function to escape some text then use it
-const escapes = function (str) {
+//function to escape text, deal with cross-site scripting
+const escapes = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
@@ -58,7 +19,7 @@ const renderTweets = function(tweets) {
   for (const tweet of tweets) {
     $('#tweet-container').prepend(createTweetElement(tweet));
   }
-}
+};
 
 const createTweetElement = function(data) {
 
@@ -99,20 +60,9 @@ const createTweetElement = function(data) {
            </div>
           </footer>
   </article>
-  `
-}
+  `;
+};
 
-// const loadTweets = function() {
-//   $.ajax({
-//     url: "/tweets",
-//     method: "GET",
-//     dataType: "json",
-//     success: function (data) {
-//       console.log("Tweets data:",data)
-//       renderTweets(data)
-//     }
-//   })
-// };
 
 const loadTweets = function() {
   $.ajax({
@@ -121,7 +71,7 @@ const loadTweets = function() {
     dataType: "json"
   }).then((result) => {
     renderTweets(result);
-  })
+  });
 };
 
 
@@ -135,11 +85,11 @@ $(document).ready(function() {
   $('#compose-tweet').submit(function(event) {
     event.preventDefault();
     const serializedData = $(this).serialize();
-    const tweetLength = $("#tweet-text").val().length
+    const tweetLength = $("#tweet-text").val().length;
 
     if (tweetLength > 140) {
-      $("#error").text("Error! Your tweet is too long!")
-      $("#error").slideDown("slow")
+      $("#error").text("Error! Your tweet is too long!");
+      $("#error").slideDown("slow");
       
       return false;
     }
@@ -154,19 +104,14 @@ $(document).ready(function() {
     $("#error").slideUp("slow");
 
 
-    $.ajax({ 
+    $.ajax({
       type: 'POST',
       url: $("form").attr("action"),
       data: serializedData
-    }).then( (event) => {
+    }).then(() => {
       location.reload();
-    })
-   
-
-    console.log( $( this ).serialize() );
-    // event.preventDefault();
-
-  })
+    });
+  });
 
 
 });

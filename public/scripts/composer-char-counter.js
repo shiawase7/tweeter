@@ -20,7 +20,7 @@ $(document).ready(function() {
       $counter.removeClass('past-limit');
     }
     $('.counter').text(maxChar - textLength);
-  })
+  });
   
 });
 

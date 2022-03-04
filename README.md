@@ -16,3 +16,17 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+
+## Screenshots
+![Screenshot of entire website in desktop view](https://github.com/shiawase7/tweeter/blob/master/docs/desktop-page.png?raw=true)
+
+![Screen shot of writing new tweet](https://github.com/shiawase7/tweeter/blob/master/docs/write-tweet.png?raw=true)
+
+![Screen shot of new tweet posted](https://github.com/shiawase7/tweeter/blob/master/docs/new-tweet.png?raw=true)
+
+![Screen shot of breakpoint for smaller decices 1](https://github.com/shiawase7/tweeter/blob/master/docs/less-than-768pt1.png?raw=true)
+
+![Screen shot of breakpoint for smaller decices 2](https://github.com/shiawase7/tweeter/blob/master/docs/less-than-768pt2.png?raw=true)
+
+

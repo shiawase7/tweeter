@@ -1,23 +1,22 @@
- /* Probably a better way to do this -->make a class in header in main*/
- #tweet-container {
-   border-style: solid;
-   border-width: 2.5px;
-   padding: 10px;
-   margin-top: 20px;
+.tweet-header {
+ background-color: #f4f1ec;
+ height: auto;
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ color:darkgray;
+ padding-top: 20px;
+}
+
+ article.tweet {
+  border-style: solid;
+  border-width: 2.5px;
+  padding: 10px;
+  margin-top: 20px;
  }
 
- .tweet-container:hover {
+ article.tweet:hover {
   box-shadow: 5px 5px gray;
- }
- 
- .tweet-header {
-  background-color: #f4f1ec;
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  color:darkgray;
-  padding-top: 20px;
  }
 
  article.tweet p {
@@ -63,5 +62,5 @@
  }
 
  .icons div:hover {
-   color: yellow;
+   color:darkgoldenrod;
  }
